@@ -6,6 +6,7 @@ public class PointAndClick : MonoBehaviour
 {
     public Camera cam;
     public GameObject particle;
+    public GameObject player;
     // Use this for initialization
     void Start()
     {
@@ -15,21 +16,16 @@ public class PointAndClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, 900 * Vector2.right, Color.green);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawLine(transform.position, ray.origin, Color.green);
+
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("fire");
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, 900 * Vector2.right);
-            //RaycastHit2D hit = Physics2D.Raycast(transform.position, Input.mousePosition, 10000f);
-            
-
-            Debug.Log(hit.ToString());
-
-
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.origin);
+            Debug.Log("Alpha");
             if (hit.collider != null)
             {
-                Instantiate(particle, new Vector3(transform.position.x + hit.distance / 2, transform.position.y + hit.distance / 2, 0), new Quaternion());
-                /*switch (hit.collider.tag)
+                switch (hit.collider.tag)
                 {
                     case "Tree":
                         Debug.Log("TREEEEEE");
@@ -40,10 +36,6 @@ public class PointAndClick : MonoBehaviour
                     default:
                         Debug.Log("Damn");
                         break;
-                }*/
-                if(hit.collider.tag != null)
-                {
-                    Debug.Log(hit.collider.tag);
                 }
             }
         }
