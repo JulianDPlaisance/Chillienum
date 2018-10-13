@@ -7,6 +7,7 @@ public class PointAndClick : MonoBehaviour
     public Camera cam;
     public GameObject particle;
     public GameObject player;
+    public LayerMask mask;
     // Use this for initialization
     void Start()
     {
@@ -21,20 +22,20 @@ public class PointAndClick : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.origin);
-            Debug.Log("Alpha");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.origin, 1000f, mask.value);
             if (hit.collider != null)
             {
+                Debug.Log(hit.collider.name);
+                
                 switch (hit.collider.tag)
                 {
                     case "Tree":
-                        Debug.Log("TREEEEEE");
+                        hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= 2;
                         break;
                     case "Rock":
-                        Debug.Log("CAPTAIN PLANET");
+                        hit.collider.GetComponent<Rigidbody2D>().mass /= 5;
                         break;
                     default:
-                        Debug.Log("Damn");
                         break;
                 }
             }
