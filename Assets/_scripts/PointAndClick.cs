@@ -30,10 +30,10 @@ public class PointAndClick : MonoBehaviour
                 switch (hit.collider.tag)
                 {
                     case "Tree":
-                        Debug.Log("TREEEEEE");
+                        hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= 2;
                         break;
                     case "Rock":
-                        Debug.Log("CAPTAIN PLANET");
+                        hit.collider.GetComponent<Rigidbody2D>().mass /= 5;
                         break;
                     default:
                         break;
