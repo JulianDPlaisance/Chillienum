@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -137,6 +138,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bd820f923336b478ca8e08ae9e5b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playr: {fileID: 2029846327}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -183,12 +196,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.51651675, y: 0.5277455, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 2029846331}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &896378832
 GameObject:
@@ -333,7 +346,7 @@ Transform:
   m_LocalScale: {x: 7.715, y: 6.2317, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2024850841
 GameObject:
@@ -442,7 +455,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &2029846330
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -501,8 +514,9 @@ Transform:
   m_Children:
   - {fileID: 896378833}
   - {fileID: 2024850842}
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2029846332
 MonoBehaviour:
@@ -521,10 +535,10 @@ MonoBehaviour:
   MAXSPEED: 15
   moveSpeed: 5
   xspeed: 0
-  jumpForce: 20
-  secondJumpForce: 15
-  jumpTime: 0.5
-  secondJumpTime: 0.15
+  jumpForce: 15
+  secondJumpForce: 7
+  jumpTime: 0.2
+  secondJumpTime: 0.05
   jumpTimeCounter: 0
   secondJumpCounter: 0
   facingRight: 1
@@ -627,5 +641,5 @@ Transform:
   m_LocalScale: {x: 37.25104, y: 7.998, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
