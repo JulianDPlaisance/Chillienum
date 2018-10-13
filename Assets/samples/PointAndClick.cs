@@ -2,25 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointAndClick : MonoBehaviour {
+public class PointAndClick : MonoBehaviour
+{
     public Camera cam;
-    public GameObject particle;
-    public Ray ray;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(Input.GetButtonDown("Fire1"))
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.DrawRay(transform.position, 90 * Vector2.right, Color.green);
+        Debug.DrawRay(transform.position, Input.mousePosition, Color.blue, 0f, true);
+        Debug.DrawLine(transform.position, 90 * Vector2.right, Color.red, 0f, true);
+        if (Input.GetButtonDown("Fire1"))
         {
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y), Input.mousePosition);
+            Debug.Log("fire");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, 90 * Vector2.right);
             
-            if(hit.collider != null)
+
+            Debug.Log(hit.ToString());
+            Debug.Log(hit.distance);
+
+            if (hit.collider != null)
             {
-                Debug.Log(hit.collider.ToString());
+                /*switch (hit.collider.tag)
+                {
+                    case "Tree":
+                        Debug.Log("TREEEEEE");
+                        break;
+                    case "Rock":
+                        Debug.Log("CAPTAIN PLANET");
+                        break;
+                    default:
+                        Debug.Log("Damn");
+                        break;
+                }*/
+                if(hit.collider.tag != null)
+                {
+                    Debug.Log(hit.collider.tag);
+                }
             }
         }
-	}
+    }
 }
