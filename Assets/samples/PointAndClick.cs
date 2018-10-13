@@ -14,13 +14,11 @@ public class PointAndClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position, 90 * Vector2.right, Color.green);
-        Debug.DrawRay(transform.position, Input.mousePosition, Color.blue, 0f, true);
-        Debug.DrawLine(transform.position, 90 * Vector2.right, Color.red, 0f, true);
+        Debug.DrawRay(transform.position, Input.mousePosition, Color.green);
         if (Input.GetButtonDown("Fire1"))
         {
             Debug.Log("fire");
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, 90 * Vector2.right);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Input.mousePosition, 10000f);
             
 
             Debug.Log(hit.ToString());
