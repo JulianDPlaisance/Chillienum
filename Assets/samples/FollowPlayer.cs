@@ -6,15 +6,15 @@ public class FollowPlayer : MonoBehaviour {
 
     public GameObject playr;
     Transform trans;
-    Transform offset;
+    Vector3 offset;
 	// Use this for initialization
 	void Start () {
-        offset = this.transform;
+        offset = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         trans = playr.transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.position = (offset.position + playr.transform.position);
+        transform.position = (offset + playr.transform.position);
 	}
 }
