@@ -9,7 +9,7 @@ public class playerMovement : MonoBehaviour
     public float MAXSPEED, moveSpeed, xspeed;
     public float jumpForce, secondJumpForce, jumpTime, secondJumpTime, jumpTimeCounter, secondJumpCounter;
     public AudioClip[] walk, jumping, pain; public AudioSource source;
-    bool walking = false;
+    public Animator controller;
 
     //jump checks
     bool grounded;
@@ -41,17 +41,29 @@ public class playerMovement : MonoBehaviour
         if (Input.GetAxis("Horizontal") != 0.0f)
         {
             xspeed += Input.GetAxis("Horizontal") * (moveSpeed * (1 - Time.deltaTime));
+            controller.SetFloat("speed", xspeed);
+            if (!source.isPlaying)
+            {
+                source.clip = walk[Random.Range(0, walk.Length - 1)];
+                source.Play();
+            }
         }
         else
         {
             if ((xspeed > -0.45f && xspeed < 0.0f) || (xspeed > 0.45f && xspeed > 0.0f))
             {
-                xspeed -= xspeed * 0.45f; walking = true;
+                xspeed -= xspeed * 0.45f;
+                if (!source.isPlaying)
+                {
+                    source.clip = walk[Random.Range(0, walk.Length - 1)];
+                    source.Play();
+                }
             }
             else
             {
-                xspeed = 0; walking = false;
+                xspeed = 0; 
             }
+            controller.SetFloat("speed", xspeed);
         }
         if (Mathf.Abs(xspeed) >= MAXSPEED)
         {
@@ -70,6 +82,9 @@ public class playerMovement : MonoBehaviour
             {
                 rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpForce);
                 TimesJumped = 0;
+                controller.SetBool("jumping", true);
+                source.clip = jumping[0];
+                source.Play();
             }
             else if (!grounded && TimesJumped < 2)
             {
@@ -85,8 +100,7 @@ public class playerMovement : MonoBehaviour
                 {
                     rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpForce);
                     jumpTimeCounter -= Time.deltaTime;
-                    source.clip = jumping[0];
-                    source.Play();
+
                 }
             }
             else if (TimesJumped == 1)
@@ -106,17 +120,9 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundedRadius, WhatIsGround);
-        if(walking && !source.isPlaying)
-        {
-            source.clip = walk[Random.Range(0, walk.Length - 1)];
-            source.Play();
-        }
-        else if(walking && source.isPlaying)
-        {
-
-        }
         if (grounded)
         {
+            controller.SetBool("jumping", false);
             jumpTimeCounter = jumpTime;
             secondJumpCounter = secondJumpTime;
             TimesJumped = 0;
@@ -138,6 +144,6 @@ public class playerMovement : MonoBehaviour
 
     private void Flip()
     {
-
+        //this.GetComponent<SpriteRenderer>().flipX = !this.GetComponent<SpriteRenderer>().flipX;
     }
 }
