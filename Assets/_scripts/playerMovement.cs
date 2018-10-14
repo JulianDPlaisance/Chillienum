@@ -82,7 +82,7 @@ public class playerMovement : MonoBehaviour
             {
                 rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpForce);
                 TimesJumped = 0;
-                controller.SetBool("jumping", true);
+                controller.SetBool("jump", true);
                 source.clip = jumping[0];
                 source.Play();
             }
@@ -122,7 +122,7 @@ public class playerMovement : MonoBehaviour
         grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundedRadius, WhatIsGround);
         if (grounded)
         {
-            controller.SetBool("jumping", false);
+            controller.SetBool("jump", false);
             jumpTimeCounter = jumpTime;
             secondJumpCounter = secondJumpTime;
             TimesJumped = 0;
@@ -142,6 +142,15 @@ public class playerMovement : MonoBehaviour
         }
     }
 
+    public void dead()
+    {
+        controller.SetTrigger("ded");
+        float time = Time.time + 10;
+        while(time > Time.time)
+        {
+
+        }
+    }
     private void Flip()
     {
         //this.GetComponent<SpriteRenderer>().flipX = !this.GetComponent<SpriteRenderer>().flipX;
