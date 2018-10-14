@@ -1303,7 +1303,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479a1b6a88aaec84e979de016b711d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standing: []
+  standing:
+  - {fileID: 21300000, guid: 88a0312be4c33264cbed30123ca41751, type: 3}
   walking:
   - {fileID: 21300000, guid: 88a0312be4c33264cbed30123ca41751, type: 3}
   - {fileID: 21300000, guid: ae2ce40dc55267147b6b0f3af11b77a1, type: 3}
@@ -1313,8 +1314,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ca395a2e7e0fedd46840579e93539df3, type: 3}
   - {fileID: 21300000, guid: 5678d1ec73b7eff4fb731754bca8b304, type: 3}
   - {fileID: 21300000, guid: 2a9ffb6e99f6a314788cfac387519be4, type: 3}
-  jumping: []
-  dying: []
+  jumping:
+  - {fileID: 21300000, guid: adf9cd13d00036a40bb52a536e634ef9, type: 3}
+  - {fileID: 21300000, guid: 37df481ca02fdd5468cdd85a82c4e8a1, type: 3}
+  - {fileID: 21300000, guid: 92db9d91d94d70446828e26988ebc2b6, type: 3}
+  - {fileID: 21300000, guid: c0f30019f2a6cd34cb37121b77bd11db, type: 3}
+  - {fileID: 21300000, guid: 8add7e694739f9344af724ca5d2ff22b, type: 3}
+  dying:
+  - {fileID: 21300000, guid: 951ed0c3fe93acf4c86c7b0144659ff5, type: 3}
+  - {fileID: 21300000, guid: 5bde6b35e8288ab45bb69d3d7bb3fad2, type: 3}
+  - {fileID: 21300000, guid: ba00506e7ae9bbf4096ab5d13074183b, type: 3}
+  - {fileID: 21300000, guid: 9a6627b0f07fc914f9c3066213716462, type: 3}
+  - {fileID: 21300000, guid: a62c7f8772e45a044bacdb29c453b86a, type: 3}
+  - {fileID: 21300000, guid: 04ce460f22ffa2e46ac9ea3646164914, type: 3}
+  - {fileID: 21300000, guid: 1616182e24e1f3840a971bd7c6e267e3, type: 3}
+  - {fileID: 21300000, guid: 387c130947f8b674abef8d8f86e24a11, type: 3}
+  - {fileID: 21300000, guid: ed19dd9c827d1684e81b08f468f3088e, type: 3}
+  - {fileID: 21300000, guid: 80aef4dd631271544aa39a335fe2898e, type: 3}
 --- !u!212 &212180716374555854
 SpriteRenderer:
   m_ObjectHideFlags: 1
