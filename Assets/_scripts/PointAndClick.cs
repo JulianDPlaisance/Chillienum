@@ -19,11 +19,11 @@ public class PointAndClick : MonoBehaviour
     void Update()
     {
         
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0f));
         RaycastHit2D hit = Physics2D.Raycast(transform.position, ray.origin, 1000f, mask.value);
-        //Debug.DrawLine(transform.position, ray.origin, Color.green);
+        Debug.DrawLine(transform.position, ray.origin, Color.green);
 
-        truth.transform.position = ray.origin;
+        truth.transform.position = new Vector3(ray.origin.x, ray.origin.y, 0f);
         if (hit.collider != null)
         {
             if(hit.collider.tag == "Tree" || hit.collider.tag == "Rock")

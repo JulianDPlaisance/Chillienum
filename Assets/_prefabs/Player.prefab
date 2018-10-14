@@ -1177,7 +1177,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5dce6ad50c1b2fc42b040c3a04eb2842, type: 3}
   pain:
   - {fileID: 8300000, guid: a2062363ccce27a42954567b57e2dc74, type: 3}
-  source: {fileID: 82428811483879188, guid: 60470cfd672d09d40bfd0647c82e9014, type: 2}
+  source: {fileID: 0}
   facingRight: 1
 --- !u!114 &114405579948916576
 MonoBehaviour:
@@ -1190,12 +1190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e0648817d37b946994e72515e03fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 20618962749524728, guid: 60470cfd672d09d40bfd0647c82e9014, type: 2}
+  cam: {fileID: 0}
   player: {fileID: 1461316071157660}
   mask:
     serializedVersion: 2
     m_Bits: 512
-  truth: {fileID: 114245594817265524, guid: 91f3e5691b5a6c548b984a4d19f2d69d, type: 2}
+  truth: {fileID: 0}
 --- !u!114 &114799836755517886
 MonoBehaviour:
   m_ObjectHideFlags: 1
