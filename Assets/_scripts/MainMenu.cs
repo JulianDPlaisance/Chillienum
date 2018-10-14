@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
 
     public void Begin()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("FirstScene");
     }
 
     public void Exit()

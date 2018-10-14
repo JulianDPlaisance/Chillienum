@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionMenu : MonoBehaviour {
 
-    public GameObject creditmenu, mainmenu;
+    public GameObject mainmenu;
     
     public void Back()
     {
