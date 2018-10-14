@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class PointAndClick : MonoBehaviour
 {
-    public Vector3 shrinkScaling;
-    public Vector3 growthScaling;
+    //public Vector3 rockScaling;public Vector3 treeScaling;
     public Camera cam;
-    public GameObject particle;
     public GameObject player;
     public LayerMask mask;
-
-    private Vector3 normalScale;
-    private bool isActive = false;
     // Use this for initialization
     void Start()
     {
-        normalScale = transform.localScale;
+       
     }
 
     // Update is called once per frame
@@ -36,10 +31,16 @@ public class PointAndClick : MonoBehaviour
                 switch (hit.collider.tag)
                 {
                     case "Tree":
-                        hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= 1.5f;
+                        if (hit.collider.GetComponent<Rigidbody2D>().transform.localScale.x <= 3f)
+                        {
+                            hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= 1.5f;
+                        }
                         break;
                     case "Rock":
-                        hit.collider.GetComponent<Rigidbody2D>().mass /= 5;
+                        if (hit.collider.GetComponent<Rigidbody2D>().transform.localScale.x <= 3f)
+                        {
+                            hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= 1.5f;
+                        }
                         break;
                     default:
                         break;
@@ -56,10 +57,16 @@ public class PointAndClick : MonoBehaviour
                 switch (hit.collider.tag)
                 {
                     case "Tree":
-                        hit.collider.GetComponent<Rigidbody2D>().transform.localScale*= 0.5f;
+                        if (hit.collider.GetComponent<Rigidbody2D>().transform.localScale.x >= .333f)
+                        {
+                            hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= .666f;
+                        }
                         break;
                     case "Rock":
-                        hit.collider.GetComponent<Rigidbody2D>().mass /= 5;
+                        if (hit.collider.GetComponent<Rigidbody2D>().transform.localScale.x >= .333f)
+                        {
+                            hit.collider.GetComponent<Rigidbody2D>().transform.localScale *= .666f;
+                        }
                         break;
                     default:
                         break;

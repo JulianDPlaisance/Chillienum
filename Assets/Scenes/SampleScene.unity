@@ -476,6 +476,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1847135133336966, guid: 1134401e2e0c1c24194085aaf871aeac, type: 2}
+      propertyPath: m_TagString
+      value: Rock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1134401e2e0c1c24194085aaf871aeac, type: 2}
   m_IsPrefabAsset: 0
