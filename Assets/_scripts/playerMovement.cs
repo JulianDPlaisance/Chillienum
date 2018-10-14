@@ -8,8 +8,8 @@ public class playerMovement : MonoBehaviour
     //speed stats
     public float MAXSPEED, moveSpeed, xspeed;
     public float jumpForce, secondJumpForce, jumpTime, secondJumpTime, jumpTimeCounter, secondJumpCounter;
-    public AudioClip[] clip;
-
+    public AudioClip[] walk, jumping, pain; public AudioSource source;
+    bool walking = false;
 
     //jump checks
     bool grounded;
@@ -46,11 +46,11 @@ public class playerMovement : MonoBehaviour
         {
             if ((xspeed > -0.45f && xspeed < 0.0f) || (xspeed > 0.45f && xspeed > 0.0f))
             {
-                xspeed -= xspeed * 0.45f;
+                xspeed -= xspeed * 0.45f; walking = true;
             }
             else
             {
-                xspeed = 0;
+                xspeed = 0; walking = false;
             }
         }
         if (Mathf.Abs(xspeed) >= MAXSPEED)
@@ -104,7 +104,15 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundedRadius, WhatIsGround);
+        if(walking && !source.isPlaying)
+        {
+            source.clip = walk[Random.Range(0, walk.Length)];
+            source.Play();
+        }
+        else if(walking && source.isPlaying)
+        {
 
+        }
         if (grounded)
         {
             jumpTimeCounter = jumpTime;
