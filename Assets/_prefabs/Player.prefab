@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 50063844311311934}
   - component: {fileID: 114185947845846910}
   - component: {fileID: 114405579948916576}
-  - component: {fileID: 82730914524970092}
   - component: {fileID: 60877430293448456}
   - component: {fileID: 114799836755517886}
   m_Layer: 0
@@ -146,14 +145,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58330806523146960
 CircleCollider2D:
@@ -1147,101 +1146,6 @@ PolygonCollider2D:
       - {x: 2.22, y: 4.1}
       - {x: 2.22, y: 4.15}
       - {x: 2.21, y: 4.17}
---- !u!82 &82730914524970092
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1461316071157660}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5dce6ad50c1b2fc42b040c3a04eb2842, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 2
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &114185947845846910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,10 +1160,10 @@ MonoBehaviour:
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  MAXSPEED: 15
-  moveSpeed: 5
+  MAXSPEED: 30
+  moveSpeed: 10
   xspeed: 0
-  jumpForce: 20
+  jumpForce: 45
   secondJumpForce: 0
   jumpTime: 0.1
   secondJumpTime: 0.05
@@ -1273,7 +1177,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5dce6ad50c1b2fc42b040c3a04eb2842, type: 3}
   pain:
   - {fileID: 8300000, guid: a2062363ccce27a42954567b57e2dc74, type: 3}
-  source: {fileID: 82730914524970092}
+  source: {fileID: 82428811483879188, guid: 60470cfd672d09d40bfd0647c82e9014, type: 2}
   facingRight: 1
 --- !u!114 &114405579948916576
 MonoBehaviour:
@@ -1286,12 +1190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74e0648817d37b946994e72515e03fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 20618962749524728, guid: 60470cfd672d09d40bfd0647c82e9014, type: 2}
   player: {fileID: 1461316071157660}
   mask:
     serializedVersion: 2
     m_Bits: 512
-  truth: {fileID: 0}
+  truth: {fileID: 114245594817265524, guid: 91f3e5691b5a6c548b984a4d19f2d69d, type: 2}
 --- !u!114 &114799836755517886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1331,6 +1235,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 387c130947f8b674abef8d8f86e24a11, type: 3}
   - {fileID: 21300000, guid: ed19dd9c827d1684e81b08f468f3088e, type: 3}
   - {fileID: 21300000, guid: 80aef4dd631271544aa39a335fe2898e, type: 3}
+  rend: {fileID: 212180716374555854}
+  intervalTime: 30
+  targetTime: 0
 --- !u!212 &212180716374555854
 SpriteRenderer:
   m_ObjectHideFlags: 1
