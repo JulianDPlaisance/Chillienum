@@ -85,6 +85,8 @@ public class playerMovement : MonoBehaviour
                 {
                     rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpForce);
                     jumpTimeCounter -= Time.deltaTime;
+                    source.clip = jumping[0];
+                    source.Play();
                 }
             }
             else if (TimesJumped == 1)
@@ -106,7 +108,7 @@ public class playerMovement : MonoBehaviour
         grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundedRadius, WhatIsGround);
         if(walking && !source.isPlaying)
         {
-            source.clip = walk[Random.Range(0, walk.Length)];
+            source.clip = walk[Random.Range(0, walk.Length - 1)];
             source.Play();
         }
         else if(walking && source.isPlaying)

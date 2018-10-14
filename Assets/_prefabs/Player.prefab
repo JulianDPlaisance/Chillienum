@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 61044057576057092}
   - component: {fileID: 114185947845846910}
   - component: {fileID: 114405579948916576}
+  - component: {fileID: 82730914524970092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -111,8 +112,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090719284237946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.30879, y: -0.27233648, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 27.25, y: 2.22, z: 0}
+  m_LocalScale: {x: 1.775, y: 6.2015624, z: 1}
   m_Children:
   - {fileID: 4688885124574102}
   m_Father: {fileID: 0}
@@ -125,8 +126,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461316071157660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3, z: 1}
+  m_LocalPosition: {x: -4.653524, y: -0.125, z: 0}
+  m_LocalScale: {x: 1, y: 1.2792501, z: 1}
   m_Children:
   - {fileID: 4033556127512440}
   - {fileID: 4043710435486886}
@@ -208,6 +209,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!82 &82730914524970092
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461316071157660}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5dce6ad50c1b2fc42b040c3a04eb2842, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 2
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114185947845846910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,12 +321,21 @@ MonoBehaviour:
   MAXSPEED: 15
   moveSpeed: 5
   xspeed: 0
-  jumpForce: 15
-  secondJumpForce: 7
+  jumpForce: 20
+  secondJumpForce: 0
   jumpTime: 0.1
   secondJumpTime: 0.05
-  jumpTimeCounter: 0
-  secondJumpCounter: 0
+  jumpTimeCounter: 0.1
+  secondJumpCounter: 0.05
+  walk:
+  - {fileID: 8300000, guid: 37abf2caed8303e42aa30bdcbb393020, type: 3}
+  - {fileID: 8300000, guid: 4c008d81c54eae642a0d6564744d8844, type: 3}
+  - {fileID: 8300000, guid: 1907988506fbef14abfbe39ce65a3416, type: 3}
+  jumping:
+  - {fileID: 8300000, guid: 5dce6ad50c1b2fc42b040c3a04eb2842, type: 3}
+  pain:
+  - {fileID: 8300000, guid: a2062363ccce27a42954567b57e2dc74, type: 3}
+  source: {fileID: 82730914524970092}
   facingRight: 1
 --- !u!114 &114405579948916576
 MonoBehaviour:
@@ -244,7 +349,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  particle: {fileID: 0}
   player: {fileID: 1461316071157660}
   mask:
     serializedVersion: 2
