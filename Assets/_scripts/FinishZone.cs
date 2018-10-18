@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishZone : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player" || collision.name == "Player" || collision.gameObject.name == "Player")
+        if (SceneManager.GetActiveScene().name == "SecondScene")
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            if (collision.tag == "Player" || collision.name == "Player" || collision.gameObject.name == "Player")
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
+        else if(SceneManager.GetActiveScene().name == "FirstScene")
+        {
+            if (collision.tag == "Player" || collision.name == "Player" || collision.gameObject.name == "Player")
+            {
+                SceneManager.LoadScene("SecondScene");
+            }
         }
     }
 }

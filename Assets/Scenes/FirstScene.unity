@@ -400,7 +400,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 37a2372c76345c44a94e458d0ac021d8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.59
   m_Pitch: 2
   Loop: 1
   Mute: 0
@@ -527,7 +527,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4305796448713454, guid: a55299f379cd39344a39069fd219666a, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1582616718667936, guid: a55299f379cd39344a39069fd219666a, type: 2}
       propertyPath: m_Name
@@ -792,36 +792,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &658187452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1461316071157660, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec,
-    type: 2}
-  m_PrefabInternal: {fileID: 675977287}
---- !u!61 &658187454
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 658187452}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.56, y: -0.56}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 10.8}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.71, y: 8.86}
-  m_EdgeRadius: 0
 --- !u!82 &664222330 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 82428811483879188, guid: 60470cfd672d09d40bfd0647c82e9014,
@@ -885,6 +855,25 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114021053043973600, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec,
+        type: 2}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 664222330}
+    - target: {fileID: 114461284234126386, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec,
+        type: 2}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 512291636}
+    - target: {fileID: 114461284234126386, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec,
+        type: 2}
+      propertyPath: truth
+      value: 
+      objectReference: {fileID: 269607291}
+    - target: {fileID: 4014548311163412, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.57
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60877430293448456, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec, type: 2}
@@ -1035,7 +1024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -249, y: 143}
+  m_AnchoredPosition: {x: -249, y: 185.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158327510
@@ -1050,7 +1039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1059,18 +1048,26 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'Left click:Grow
+
+    Right click:Shrink
+
+    A: left
+
+    D:Right
+
+    Space: Jump'
 --- !u!222 &1158327511
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1121,10 +1118,15 @@ Prefab:
         type: 2}
       propertyPath: playr
       value: 
-      objectReference: {fileID: 658187452}
+      objectReference: {fileID: 1503142694}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60470cfd672d09d40bfd0647c82e9014, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1503142694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1460534950700122, guid: 7c57d4fa7a16ab04b8c7b8e5b7be3fec,
+    type: 2}
+  m_PrefabInternal: {fileID: 675977287}
 --- !u!1 &1707172311
 GameObject:
   m_ObjectHideFlags: 0
